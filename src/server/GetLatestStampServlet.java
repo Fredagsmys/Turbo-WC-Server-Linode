@@ -22,7 +22,7 @@ public class GetLatestStampServlet extends HttpServlet{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-        byte[] msg = Utils.getMillis(stamp.timeDiff).getBytes();
+        byte[] msg = Utils.getMillis(stamp.timeDiff).getBytes(); //KLARAR INTE OM ANTAL TIMMAR ÄR TRESIFFRIGT
         response.setContentLength(msg.length);
 		response.setContentType("utf-8");
         response.write(msg);

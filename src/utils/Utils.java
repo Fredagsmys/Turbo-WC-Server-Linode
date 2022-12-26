@@ -22,7 +22,8 @@ public class Utils{
         try {
             reference = dateFormat.parse("00:00:00");
             date = dateFormat.parse(dateString);
-        } catch (ParseException e) {
+        } 
+        catch (ParseException e) {
             e.printStackTrace();
         }
         

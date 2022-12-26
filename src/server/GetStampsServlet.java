@@ -1,6 +1,7 @@
 package server;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,18 +27,18 @@ public class GetStampsServlet extends HttpServlet {
 		String message = "";
 		if (stamps.size() >0) {
 			for (Stamp stamp : stamps) {
-				message += "<li>" + stamp.bathroom + "rengjordes vid " + stamp.date + "</li>";
+				message += "<li>" + stamp.bathroom + " rengjordes vid " + stamp.date + "</li>";
 			}
 		}
 		String html = String.format("<article>"
-				+ "<header><h1>De senaste st�dningarna av toaletterna p� Turbo</h1>"
+				+ "<header><h1>De senaste städningarna av Turbos toaletter</h1>"
 				+ "<p>Gjord av Max Mattsson</p>"
 				+ "<ul>"
 				+ "%s"
 				+ "</ul>"
 				+ "</header>"
 				+ "</article>", message);
-		byte[] byteMessage = html.getBytes();
+		byte[] byteMessage = html.getBytes(StandardCharsets.UTF_8);
 		
 		response.setContentLength(byteMessage.length);
 		response.setContentType("utf-8");

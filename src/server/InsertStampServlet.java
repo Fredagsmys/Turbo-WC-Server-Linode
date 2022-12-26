@@ -4,8 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -35,15 +33,12 @@ public class InsertStampServlet extends HttpServlet{
 		System.out.println(bathroom);
 		
 		scanner.useLocale(Locale.US);
-		// String username = scanner.next(); //tog bort användarfunktion
 		
-		int status = -1;
-		// Date date = new Date();
-		// SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
-		// String timestamp = "'" + format.format(date) + "'";
+		// int status = -1;
+
 		try {
 			
-			 status = connection.insert_stamp(bathroom);
+			connection.insert_stamp(bathroom);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

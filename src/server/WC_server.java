@@ -28,8 +28,8 @@ public class WC_server extends WSEServer{
 	public WC_server() {
 
 		ServiceManager manager = getServiceManager();
-		manager.register("/GetUsers", GetUsersServlet.class);
-		manager.register("/InsertUser", InsertUsersServlet.class);
+		// manager.register("/GetUsers", GetUsersServlet.class);
+		// manager.register("/InsertUser", InsertUsersServlet.class);
 		manager.register("/InsertBathroom", InsertBathroomServlet.class);
 		manager.register("/InsertStamp", InsertStampServlet.class);
 		manager.register("/GetStamps", GetStampsServlet.class);
