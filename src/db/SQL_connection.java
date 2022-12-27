@@ -115,6 +115,7 @@ public class SQL_connection {
 		connection = DriverManager.getConnection(URI);
 		statement = connection.createStatement();
 		//END NEW
+		
 		String currDate = Utils.getCurrTime();
 		String getString = String.format(
 				"SELECT DATE, TIMEDIFF(%s,DATE) "
